@@ -30,7 +30,7 @@ def _get_random_string(length):
     return ''.join(random.choice(letters) for i in range(length))
 
 _reset()
-THREAD_COUNT = 4
+THREAD_COUNT = 10
 threads = []
 try:
     for i in range(THREAD_COUNT):

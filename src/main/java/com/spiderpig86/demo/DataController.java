@@ -13,6 +13,8 @@ public class DataController {
 
     @Autowired
     private DataFacade dataFacade;
+    @Autowired
+    private NTSDataFacade ntsDataFacade;
 
     @RequestMapping("/getstrings")
     private List<String> getWord() {
@@ -24,9 +26,14 @@ public class DataController {
         return dataFacade.addWord(word);
     }
 
+    @RequestMapping("/ts-increment")
+    private int incrementEndpointTS() {
+        return dataFacade.increment();
+    }
+
     @RequestMapping("/increment")
     private int incrementEndpoint() {
-        return dataFacade.increment();
+        return ntsDataFacade.increment();
     }
 
     @PostMapping("/reset")
